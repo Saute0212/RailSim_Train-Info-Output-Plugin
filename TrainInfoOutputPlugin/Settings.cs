@@ -10,7 +10,7 @@ namespace TrainInfoOutputPlugin
     {
         private static OutputSetting outputConfig;
 
-        string[] SettingsList = { "[DllDir]", "[DllName]", "[AtsVersion]",
+        string[] SettingsList = { "[DllDir]", "[DllName]", "[AtsVersion]", "[Debug]", "[ComPort]", "[ComSpeed]",
                                   "[BrakeNotches]", "[PowerNotches]", "[AtsNotch]", "[B67Notch]", "[Cars]",
                                   "[Location]", "[Speed]", "[Time]",
                                   "[BcPressure]", "[MrPressure]", "[ErPressure]", "[BpPressure]", "[SapPressure]", "[Current]",
@@ -20,10 +20,15 @@ namespace TrainInfoOutputPlugin
         string DllName = "";
         public string DllPath = "";
         public int PluginVersion = 0;
+        public string ComPort = "COM0";
+        public int ComSpeed = 9600;
 
         //出力設定
         public struct OutputSetting
         {
+            //デバッグ設定
+            public bool SettingDebug;
+
             //車両情報
             public bool SettingBrakeNotches;
             public bool SettingPowerNotches;
@@ -52,6 +57,7 @@ namespace TrainInfoOutputPlugin
             //初期化
             public OutputSetting(bool ResetSetting)
             {
+                SettingDebug = ResetSetting;
                 SettingBrakeNotches = ResetSetting;
                 SettingPowerNotches = ResetSetting;
                 SettingAtsNotch = ResetSetting;
@@ -91,7 +97,15 @@ namespace TrainInfoOutputPlugin
                 }
                 else if (element == "[AtsVersion]")
                 {
-                    PluginVersion = GetPluginVersion(IniPath, element, len);
+                    PluginVersion = ReadPluginVersion(IniPath, element, len);
+                }
+                else if(element == "[ComPort]")
+                {
+                    ComPort = ReadIni(IniPath, element, len);
+                }
+                else if(element == "[ComSpeed]")
+                {
+                    ComSpeed = ConvertToInt(ReadIni(IniPath, element, len));
                 }
                 else
                 {
@@ -153,7 +167,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //プラグインのバージョンを取得
-        private int GetPluginVersion(string IniPath, string target, int len)
+        private int ReadPluginVersion(string IniPath, string target, int len)
         {
             bool HexFlag = true;
             string HexAnswer = "";
@@ -262,6 +276,9 @@ namespace TrainInfoOutputPlugin
                 case "[Atc]":
                     outputConfig.SettingAtc = SettingBool(setting);
                     break;
+                case "[Debug]":
+                    outputConfig.SettingDebug = SettingBool(setting);
+                    break;
                 default:
                     break;
             }
@@ -278,6 +295,19 @@ namespace TrainInfoOutputPlugin
             {
                 return false;
             }
+        }
+
+        //文字列をint型に変換
+        private int ConvertToInt(string str)
+        {
+            bool flag = int.TryParse(str, out int result);
+
+            if(!flag)
+            {
+                result = 0;
+            }
+
+            return result;
         }
     }
 }
