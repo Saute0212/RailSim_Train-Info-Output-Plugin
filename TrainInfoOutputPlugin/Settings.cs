@@ -10,16 +10,12 @@ namespace TrainInfoOutputPlugin
     {
         private static OutputSetting outputConfig;
 
-        string[] SettingsList = { "[DllDir]", "[DllName]", "[AtsVersion]", "[Debug]", "[ComPort]", "[ComSpeed]",
-                                  "[BrakeNotches]", "[PowerNotches]", "[AtsNotch]", "[B67Notch]", "[Cars]",
-                                  "[Location]", "[Speed]", "[Time]",
+        string[] SettingsList = { "[Debug]", "[ComPort]", "[ComSpeed]",
+                                  "[Cars]",  "[Location]", "[Speed]", "[Time]",
                                   "[BcPressure]", "[MrPressure]", "[ErPressure]", "[BpPressure]", "[SapPressure]", "[Current]",
                                   "[AtsP]", "[AtsPs]", "[AtsPf]", "[AtsSx]", "[Atc]" }; //iniの設定項目
-        string IniPath = "./Settings.ini";
-        string DllDir = "";
-        string DllName = "";
-        public string DllPath = "";
-        public int PluginVersion = 0;
+        string IniPath = "./PluginSettings.ini";
+        public int PluginFormat = 0x00020000;
         public string ComPort = "COM0";
         public int ComSpeed = 9600;
 
@@ -30,10 +26,6 @@ namespace TrainInfoOutputPlugin
             public bool SettingDebug;
 
             //車両情報
-            public bool SettingBrakeNotches;
-            public bool SettingPowerNotches;
-            public bool SettingAtsNotch;
-            public bool SettingB67Notch;
             public bool SettingCars;
 
             //車両状態
@@ -58,10 +50,6 @@ namespace TrainInfoOutputPlugin
             public OutputSetting(bool ResetSetting)
             {
                 SettingDebug = ResetSetting;
-                SettingBrakeNotches = ResetSetting;
-                SettingPowerNotches = ResetSetting;
-                SettingAtsNotch = ResetSetting;
-                SettingB67Notch = ResetSetting;
                 SettingCars = ResetSetting;
                 SettingLocation = ResetSetting;
                 SettingSpeed = ResetSetting;
@@ -87,19 +75,7 @@ namespace TrainInfoOutputPlugin
             int len = IniLength(IniPath);
             foreach (string element in SettingsList)
             {
-                if(element == "[DllDir]")
-                {
-                    DllDir = ReadIni(IniPath, element, len);
-                }
-                else if(element == "[DllName]")
-                {
-                    DllName = ReadIni(IniPath, element, len);
-                }
-                else if (element == "[AtsVersion]")
-                {
-                    PluginVersion = ReadPluginVersion(IniPath, element, len);
-                }
-                else if(element == "[ComPort]")
+                if(element == "[ComPort]")
                 {
                     ComPort = ReadIni(IniPath, element, len);
                 }
@@ -112,8 +88,6 @@ namespace TrainInfoOutputPlugin
                     SetConfig(element, ReadIni(IniPath, element, len));
                 }
             }
-
-            DllPath = DllDir + DllName;
         }
 
         //iniファイルの行数を取得
@@ -166,71 +140,11 @@ namespace TrainInfoOutputPlugin
             return answer;
         }
 
-        //プラグインのバージョンを取得
-        private int ReadPluginVersion(string IniPath, string target, int len)
-        {
-            bool HexFlag = true;
-            string HexAnswer = "";
-            int answer;
-
-            string data = ReadIni(IniPath, target, len);
-
-            string tmp = data[0].ToString() + data[1].ToString();
-            if (tmp != "0x")
-            {
-                HexFlag = false;
-            }
-
-            if (HexFlag)
-            {
-                for (int i = 2; i < data.Length; i++)
-                {
-                    HexAnswer += HexFormatCheck(data[i].ToString());
-                }
-            }
-            else
-            {
-                for (int i = 0; i < data.Length; i++)
-                {
-                    HexAnswer += HexFormatCheck(data[i].ToString());
-                }
-            }
-
-            answer = Convert.ToInt32(HexAnswer, 16);
-
-            return answer;
-        }
-
-        //文字が16進数のフォーマットかチェック
-        private string HexFormatCheck(string str)
-        {
-            if ("0123456789ABCDEF".Contains(str))
-            {
-                return str;
-            }
-            else
-            {
-                return "0";
-            }
-        }
-
         //設定項目を構造体に格納
         private void SetConfig(string target, string setting)
         {
             switch(target)
             {
-                case "[BrakeNotches]":
-                    outputConfig.SettingBrakeNotches = SettingBool(setting);
-                    break;
-                case "[PowerNotches]":
-                    outputConfig.SettingPowerNotches = SettingBool(setting);
-                    break;
-                case "[AtsNotch]":
-                    outputConfig.SettingAtsNotch = SettingBool(setting);
-                    break;
-                case "[B67Notch]":
-                    outputConfig.SettingB67Notch = SettingBool(setting);
-                    break;
                 case "[Cars]":
                     outputConfig.SettingCars = SettingBool(setting);
                     break;

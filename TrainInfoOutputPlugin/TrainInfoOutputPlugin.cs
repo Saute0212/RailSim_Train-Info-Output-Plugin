@@ -26,7 +26,7 @@ namespace TrainInfoOutputPlugin
         //ATSプラグインのバージョンを返す
         public int GetPluginVersion()
         {
-            return settingsEnv.PluginVersion;
+            return settingsEnv.PluginFormat;
         }
 
         //車両読み込み時に実行
