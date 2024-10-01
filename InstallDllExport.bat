@@ -6,7 +6,7 @@ set output="DllExport.bat"
 
 echo Downloading file...
 
-curl -o "%output%" "%url%"
+powershell -command "Invoke-WebRequest -Uri '%url%' -OutFile '%output%'"
 
 if exist "%output%" (
     echo Download complete. Executeing file...
