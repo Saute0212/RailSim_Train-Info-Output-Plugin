@@ -13,7 +13,7 @@ namespace TrainInfoOutputPlugin
         string[] SettingsList = { "[Debug]", "[ComPort]", "[ComSpeed]",
                                   "[Cars]",  "[Location]", "[Speed]", "[Time]",
                                   "[BcPressure]", "[MrPressure]", "[ErPressure]", "[BpPressure]", "[SapPressure]", "[Current]",
-                                  "[AtsP]", "[AtsPs]", "[AtsPf]", "[AtsSx]", "[Atc]" }; //iniの設定項目
+                                  "[AtsP]", "[AtsPs]", "[AtsPf]", "[AtsSx]", "[Atc]", "[Eb]"}; //iniの設定項目
         string IniPath = "./PluginSettings.ini";
         public int PluginFormat = 0x00020000;
         public string ComPort = "COM0";
@@ -39,12 +39,13 @@ namespace TrainInfoOutputPlugin
             public bool SettingSapPressure;
             public bool SettingCurrent;
 
-            //保安装置(ATS-P, ATS-Ps, ATS-PF, ATS-Sx, ATC)
+            //保安装置(ATS-P, ATS-Ps, ATS-PF, ATS-Sx, ATC, EB)
             public bool SettingAtsP;
             public bool SettingAtsPs;
             public bool SettingAtsPf;
             public bool SettingAtsSx;
             public bool SettingAtc;
+            public bool SettingEb;
 
             //初期化
             public OutputSetting(bool ResetSetting)
@@ -65,6 +66,7 @@ namespace TrainInfoOutputPlugin
                 SettingAtsPf = ResetSetting;
                 SettingAtsSx = ResetSetting;
                 SettingAtc = ResetSetting;
+                SettingEb = ResetSetting;
             }
         }
 
@@ -189,6 +191,9 @@ namespace TrainInfoOutputPlugin
                     break;
                 case "[Atc]":
                     outputConfig.SettingAtc = SettingBool(setting);
+                    break;
+                case "[Eb]":
+                    outputConfig.SettingEb = SettingBool(setting);
                     break;
                 case "[Debug]":
                     outputConfig.SettingDebug = SettingBool(setting);
