@@ -98,97 +98,113 @@ namespace TrainInfoOutputPlugin
         public const int ATS_CONSTANTSPEED_DISABLE = 2; //停止
 
         //プラグイン読み込み時に実行
-        public void Load()
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void Load()
         {
 
         }
 
         //プラグイン解放時に実行
-        public void Dispose()
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void Dispose()
         {
 
         }
 
         //ATSプラグインのバージョンを返す
-        public int GetPluginVersion()
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static int GetPluginVersion()
         {
             return settingsEnv.PluginFormat;
         }
 
         //車両読み込み時に実行
-        public void SetVehicleSpec()
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void SetVehicleSpec()
         {
 
         }
 
         //ゲーム開始時に実行
-        public void Initialize(int brake)
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void Initialize(int brake)
         {
 
         }
 
         //毎フレーム実行
-        public void Elapse()
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void Elapse()
         {
 
         }
 
         //主ハンドル操作時に実行
-        public void SetPower(int notch)
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void SetPower(int notch)
         {
 
         }
 
         //ブレーキ操作時に実行
-        public void SetBrake(int notch)
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void SetBrake(int notch)
         {
 
         }
 
         //レバーサー操作時に実行
-        public void SetReverser(int pos)
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void SetReverser(int pos)
         {
 
         }
 
         //ATSキーが押されたときに実行
-        public void KeyDown(int atsKeyCode)
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void KeyDown(int atsKeyCode)
         {
 
         }
 
         //ATSキーが離されたときに実行
-        public void KeyUp(int atsKeyCode)
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void KeyUp(int atsKeyCode)
         {
 
         }
 
         //警笛操作時に実行
-        public void HornBlow(int hornType)
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void HornBlow(int hornType)
         {
 
         }
 
         //ドアが開いたときに実行
-        public void DoorOpen()
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void DoorOpen()
         {
 
         }
 
         //ドアが閉まったときに実行
-        public void DoorClose()
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void DoorClose()
         {
 
         }
 
         //閉塞の信号が変化したときに実行
-        public void SetSignal(int signal)
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void SetSignal(int signal)
         {
 
         }
 
         //地上子を超えたときに実行
-        public void SetBeaconData()
+        [DllExport(CallingConvention = CallingConvention.StdCall)]
+        public static void SetBeaconData()
         {
 
         }
