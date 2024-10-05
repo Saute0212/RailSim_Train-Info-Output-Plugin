@@ -57,6 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AtsController.cs" />
+    <Compile Include="AtsP.cs" />
+    <Compile Include="AtsPs.cs" />
+    <Compile Include="ConstantSpeedControl.cs" />
+    <Compile Include="DebugFunction.cs" />
+    <Compile Include="Eb.cs" />
+    <Compile Include="SerialCommunications.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TrainInfoOutputPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
