@@ -16,7 +16,7 @@ namespace TrainInfoOutputPlugin
         static extern bool FreeConsole();
 
         //コンソールの状態
-        private bool isConsoleOpen = false;
+        public static bool isConsoleOpen = false;
 
         //コンソールの初期化
         public void InitConsole()

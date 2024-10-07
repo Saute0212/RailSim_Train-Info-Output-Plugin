@@ -35,7 +35,10 @@ namespace TrainInfoOutputPlugin
             }
             catch(Exception ex)
             {
-                Console.WriteLine("ERROR : " + ex.Message);
+                if(DebugFunction.isConsoleOpen)
+                {
+                    Console.WriteLine("ERROR : " + ex.Message);
+                }
             }
         }
 
@@ -50,7 +53,10 @@ namespace TrainInfoOutputPlugin
                 }
                 catch(Exception ex)
                 {
-                    Console.WriteLine("ERROR : " + ex.Message);
+                    if(DebugFunction.isConsoleOpen)
+                    {
+                        Console.WriteLine("ERROR : " + ex.Message);
+                    }
                 }
             }            
         }
@@ -67,7 +73,10 @@ namespace TrainInfoOutputPlugin
                 }
                 catch(Exception ex)
                 {
-                    Console.WriteLine("ERROR : " + ex.Message);
+                    if(DebugFunction.isConsoleOpen)
+                    {
+                        Console.WriteLine("ERROR : " + ex.Message);
+                    }
                 }
             }
         }
