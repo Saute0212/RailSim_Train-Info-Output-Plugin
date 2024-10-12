@@ -10,7 +10,7 @@ namespace TrainInfoOutputPlugin
     {
         private static OutputSetting outputConfig;
 
-        string[] SettingsList = { "[Debug]", "[ComPort]", "[ComSpeed]",
+        string[] SettingsList = { "[Debug]", "[SerialOutput]", "[ComPort]", "[ComSpeed]",
                                   "[Cars]",  "[Location]", "[Speed]", "[Time]",
                                   "[BcPressure]", "[MrPressure]", "[ErPressure]", "[BpPressure]", "[SapPressure]", "[Current]",
                                   "[AtsP]", "[AtsPs]", "[AtsPf]", "[AtsSx]", "[Atc]", "[Eb]", "[ConstantSpeed]"}; //iniの設定項目
@@ -24,6 +24,7 @@ namespace TrainInfoOutputPlugin
         {
             //デバッグ設定
             public bool SettingDebug;
+            public bool SettingSerialOutput;
 
             //車両情報
             public bool SettingCars;
@@ -52,6 +53,7 @@ namespace TrainInfoOutputPlugin
             public OutputSetting(bool ResetSetting)
             {
                 SettingDebug = ResetSetting;
+                SettingSerialOutput = ResetSetting;
                 SettingCars = ResetSetting;
                 SettingLocation = ResetSetting;
                 SettingSpeed = ResetSetting;
@@ -202,6 +204,9 @@ namespace TrainInfoOutputPlugin
                     break;
                 case "[Debug]":
                     outputConfig.SettingDebug = SettingBool(setting);
+                    break;
+                case "[SerialOutput]":
+                    outputConfig.SettingSerialOutput = SettingBool(setting);
                     break;
                 default:
                     break;
