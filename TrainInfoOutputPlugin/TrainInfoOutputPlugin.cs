@@ -120,7 +120,7 @@ namespace TrainInfoOutputPlugin
 
         //車両読み込み時に実行
         [DllExport(CallingConvention = CallingConvention.StdCall)]
-        public static void SetVehicleSpec()
+        public static void SetVehicleSpec(ATS_VEHICLESPEC VehicleSpec)
         {
 
         }
@@ -134,7 +134,7 @@ namespace TrainInfoOutputPlugin
 
         //毎フレーム実行
         [DllExport(CallingConvention = CallingConvention.StdCall)]
-        public static void Elapse()
+        public static void Elapse(ATS_VEHICLESTATE VehicleState, int[] panel, int[] sound)
         {
 
         }
@@ -204,7 +204,7 @@ namespace TrainInfoOutputPlugin
 
         //地上子を超えたときに実行
         [DllExport(CallingConvention = CallingConvention.StdCall)]
-        public static void SetBeaconData()
+        public static void SetBeaconData(ATS_BEACONDATA BeaconData)
         {
 
         }
