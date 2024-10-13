@@ -23,34 +23,36 @@ namespace TrainInfoOutputPlugin
         public struct OutputSetting
         {
             //デバッグ設定
-            public bool SettingDebug;
-            public bool SettingSerialOutput;
+            public bool SettingDebug { get; set; }
+
+            //シリアル通信
+            public bool SettingSerialOutput { get; set; }
 
             //車両情報
-            public bool SettingCars;
+            public bool SettingCars { get; set; }
 
             //車両状態
-            public bool SettingLocation;
-            public bool SettingSpeed;
-            public bool SettingTime;
-            public bool SettingBcPressure;
-            public bool SettingMrPressure;
-            public bool SettingErPressure;
-            public bool SettingBpPressure;
-            public bool SettingSapPressure;
-            public bool SettingCurrent;
+            public bool SettingLocation { get; set; }
+            public bool SettingSpeed { get; set; }
+            public bool SettingTime { get; set; }
+            public bool SettingBcPressure { get; set; }
+            public bool SettingMrPressure { get; set; }
+            public bool SettingErPressure { get; set; }
+            public bool SettingBpPressure { get; set; }
+            public bool SettingSapPressure { get; set; }
+            public bool SettingCurrent { get; set; }
 
             //保安装置(ATS-P, ATS-Ps, ATS-PF, ATS-Sx, ATC, EB, 定速制御)
-            public bool SettingAtsP;
-            public bool SettingAtsPs;
-            public bool SettingAtsPf;
-            public bool SettingAtsSx;
-            public bool SettingAtc;
-            public bool SettingEb;
-            public bool SettingConstantSpeed;
+            public bool SettingAtsP { get; set; }
+            public bool SettingAtsPs { get; set; }
+            public bool SettingAtsPf { get; set; }
+            public bool SettingAtsSx { get; set; }
+            public bool SettingAtc { get; set; }
+            public bool SettingEb { get; set; }
+            public bool SettingConstantSpeed { get; set; }
 
             //初期化
-            public OutputSetting(bool ResetSetting)
+            public OutputSetting(bool ResetSetting = false)
             {
                 SettingDebug = ResetSetting;
                 SettingSerialOutput = ResetSetting;
