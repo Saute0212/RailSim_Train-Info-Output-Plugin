@@ -57,14 +57,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcDcTransition.cs" />
+    <Compile Include="Announcements.cs" />
+    <Compile Include="Atc.cs" />
     <Compile Include="AtsController.cs" />
     <Compile Include="AtsP.cs" />
+    <Compile Include="AtsPf.cs" />
     <Compile Include="AtsPs.cs" />
+    <Compile Include="AtsSn.cs" />
     <Compile Include="ConstantSpeedControl.cs" />
+    <Compile Include="CsvReader.cs" />
     <Compile Include="DebugFunction.cs" />
     <Compile Include="Eb.cs" />
+    <Compile Include="FalsePassagePreventionDevice.cs" />
+    <Compile Include="IniReader.cs" />
+    <Compile Include="PlayMusic.cs" />
+    <Compile Include="ReverseMotionDetection.cs" />
     <Compile Include="SerialCommunications.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="TrainClassification.cs" />
     <Compile Include="TrainInfoOutputPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
