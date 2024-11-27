@@ -58,6 +58,11 @@ namespace TrainInfoOutputPlugin
         private static Settings settingsEnv = null;
         private static Settings.OutputSetting settingsStatus;
 
+        private static ATS_VEHICLESPEC VehicleSpec;
+        private static ATS_VEHICLESTATE VehicleState;
+        private static ATS_HANDLES HandleInput;
+        private static ATS_HANDLES HandleOutput;
+
         //ATS Keys
         public const int ATS_KEY_S = 0;
         public const int ATS_KEY_A1 = 1;
@@ -101,7 +106,7 @@ namespace TrainInfoOutputPlugin
         [DllExport(CallingConvention = CallingConvention.StdCall)]
         public static void Load()
         {
-
+            
         }
 
         //プラグイン解放時に実行
@@ -134,30 +139,34 @@ namespace TrainInfoOutputPlugin
 
         //毎フレーム実行
         [DllExport(CallingConvention = CallingConvention.StdCall)]
-        public static void Elapse(ATS_VEHICLESTATE VehicleState, int[] panel, int[] sound)
+        public static ATS_HANDLES Elapse(ATS_VEHICLESTATE VehicleState, int[] panel, int[] sound)
         {
+            HandleOutput.Power = HandleInput.Power;
+            HandleOutput.Brake = HandleInput.Brake;
+            HandleOutput.Reverser = HandleInput.Reverser;
 
+            return HandleOutput;
         }
 
         //主ハンドル操作時に実行
         [DllExport(CallingConvention = CallingConvention.StdCall)]
         public static void SetPower(int notch)
         {
-
+            HandleInput.Power = notch;
         }
 
         //ブレーキ操作時に実行
         [DllExport(CallingConvention = CallingConvention.StdCall)]
         public static void SetBrake(int notch)
         {
-
+            HandleInput.Brake = notch;
         }
 
         //レバーサー操作時に実行
         [DllExport(CallingConvention = CallingConvention.StdCall)]
         public static void SetReverser(int pos)
         {
-
+            HandleInput.Reverser = pos;
         }
 
         //ATSキーが押されたときに実行
