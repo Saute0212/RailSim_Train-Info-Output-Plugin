@@ -71,6 +71,7 @@
     <Compile Include="Eb.cs" />
     <Compile Include="FalsePassagePreventionDevice.cs" />
     <Compile Include="IniReader.cs" />
+    <Compile Include="MultiThreadController.cs" />
     <Compile Include="PlayMusic.cs" />
     <Compile Include="ReverseMotionDetection.cs" />
     <Compile Include="SerialCommunications.cs" />
