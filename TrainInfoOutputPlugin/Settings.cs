@@ -8,73 +8,50 @@ namespace TrainInfoOutputPlugin
 {
     public class Settings
     {
-        private static OutputSetting outputConfig;
-
         string[] SettingsList = { "[Debug]", "[SerialOutput]", "[ComPort]", "[ComSpeed]",
                                   "[Cars]",  "[Location]", "[Speed]", "[Time]",
                                   "[BcPressure]", "[MrPressure]", "[ErPressure]", "[BpPressure]", "[SapPressure]", "[Current]",
                                   "[AtsP]", "[AtsPs]", "[AtsPf]", "[AtsSx]", "[Atc]", "[Eb]", "[ConstantSpeed]"}; //iniの設定項目
+        
+        //iniのファイルパス
         string IniPath = "./PluginSettings.ini";
+        
+        //プラグインのフォーマット
         public int PluginFormat = 0x00020000;
+        
+        //シリアル通信設定
         public string ComPort = "COM0";
         public int ComSpeed = 9600;
 
-        //出力設定
-        public struct OutputSetting
-        {
-            //デバッグ設定
-            public bool SettingDebug { get; set; }
+        /* 出力設定 */
+        //デバッグ設定
+        private bool SettingDebug = false;
 
-            //シリアル通信
-            public bool SettingSerialOutput { get; set; }
+        //シリアル通信
+        private bool SettingSerialOutput = false;
 
-            //車両情報
-            public bool SettingCars { get; set; }
+        //車両情報
+        private bool SettingCars = false;
 
-            //車両状態
-            public bool SettingLocation { get; set; }
-            public bool SettingSpeed { get; set; }
-            public bool SettingTime { get; set; }
-            public bool SettingBcPressure { get; set; }
-            public bool SettingMrPressure { get; set; }
-            public bool SettingErPressure { get; set; }
-            public bool SettingBpPressure { get; set; }
-            public bool SettingSapPressure { get; set; }
-            public bool SettingCurrent { get; set; }
+        //車両状態
+        private bool SettingLocation = false;
+        private bool SettingSpeed = false;
+        private bool SettingTime = false;
+        private bool SettingBcPressure = false;
+        private bool SettingMrPressure = false;
+        private bool SettingErPressure = false;
+        private bool SettingBpPressure = false;
+        private bool SettingSapPressure = false;
+        private bool SettingCurrent = false;
 
-            //保安装置(ATS-P, ATS-Ps, ATS-PF, ATS-Sx, ATC, EB, 定速制御)
-            public bool SettingAtsP { get; set; }
-            public bool SettingAtsPs { get; set; }
-            public bool SettingAtsPf { get; set; }
-            public bool SettingAtsSx { get; set; }
-            public bool SettingAtc { get; set; }
-            public bool SettingEb { get; set; }
-            public bool SettingConstantSpeed { get; set; }
-
-            //初期化
-            public OutputSetting(bool ResetSetting = false)
-            {
-                SettingDebug = ResetSetting;
-                SettingSerialOutput = ResetSetting;
-                SettingCars = ResetSetting;
-                SettingLocation = ResetSetting;
-                SettingSpeed = ResetSetting;
-                SettingTime = ResetSetting;
-                SettingBcPressure = ResetSetting;
-                SettingMrPressure = ResetSetting;
-                SettingErPressure = ResetSetting;
-                SettingBpPressure = ResetSetting;
-                SettingSapPressure = ResetSetting;
-                SettingCurrent = ResetSetting;
-                SettingAtsP = ResetSetting;
-                SettingAtsPs = ResetSetting;
-                SettingAtsPf = ResetSetting;
-                SettingAtsSx = ResetSetting;
-                SettingAtc = ResetSetting;
-                SettingEb = ResetSetting;
-                SettingConstantSpeed = ResetSetting;
-            }
-        }
+        //保安装置(ATS-P, ATS-Ps, ATS-PF, ATS-Sx, ATC, EB, 定速制御)
+        private bool SettingAtsP = false;
+        private bool SettingAtsPs = false;
+        private bool SettingAtsPf = false;
+        private bool SettingAtsSx = false;
+        private bool SettingAtc = false;
+        private bool SettingEb = false;
+        private bool SettingConstantSpeed = false;
 
         //初期設定関数
         public void SetUp()
@@ -154,61 +131,61 @@ namespace TrainInfoOutputPlugin
             switch(target)
             {
                 case "[Cars]":
-                    outputConfig.SettingCars = SettingBool(setting);
+                    SettingCars = SettingBool(setting);
                     break;
                 case "[Location]":
-                    outputConfig.SettingLocation = SettingBool(setting);
+                    SettingLocation = SettingBool(setting);
                     break;
                 case "[Speed]":
-                    outputConfig.SettingSpeed = SettingBool(setting);
+                    SettingSpeed = SettingBool(setting);
                     break;
                 case "[Time]":
-                    outputConfig.SettingTime = SettingBool(setting);
+                    SettingTime = SettingBool(setting);
                     break;
                 case "[BcPressure]":
-                    outputConfig.SettingBcPressure = SettingBool(setting);
+                    SettingBcPressure = SettingBool(setting);
                     break;
                 case "[MrPressure]":
-                    outputConfig.SettingMrPressure = SettingBool(setting);
+                    SettingMrPressure = SettingBool(setting);
                     break;
                 case "[ErPressure]":
-                    outputConfig.SettingErPressure = SettingBool(setting);
+                    SettingErPressure = SettingBool(setting);
                     break;
                 case "[BpPressure]":
-                    outputConfig.SettingBpPressure = SettingBool(setting);
+                    SettingBpPressure = SettingBool(setting);
                     break;
                 case "[SapPressure]":
-                    outputConfig.SettingSapPressure = SettingBool(setting);
+                    SettingSapPressure = SettingBool(setting);
                     break;
                 case "[Current]":
-                    outputConfig.SettingCurrent = SettingBool(setting);
+                    SettingCurrent = SettingBool(setting);
                     break;
                 case "[AtsP]":
-                    outputConfig.SettingAtsP = SettingBool(setting);
+                    SettingAtsP = SettingBool(setting);
                     break;
                 case "[AtsPs]":
-                    outputConfig.SettingAtsPs = SettingBool(setting);
+                    SettingAtsPs = SettingBool(setting);
                     break;
                 case "[AtsPf]":
-                    outputConfig.SettingAtsPf = SettingBool(setting);
+                    SettingAtsPf = SettingBool(setting);
                     break;
                 case "[AtsSx]":
-                    outputConfig.SettingAtsSx = SettingBool(setting);
+                    SettingAtsSx = SettingBool(setting);
                     break;
                 case "[Atc]":
-                    outputConfig.SettingAtc = SettingBool(setting);
+                    SettingAtc = SettingBool(setting);
                     break;
                 case "[Eb]":
-                    outputConfig.SettingEb = SettingBool(setting);
+                    SettingEb = SettingBool(setting);
                     break;
                 case "[ConstantSpeed]":
-                    outputConfig.SettingConstantSpeed = SettingBool(setting);
+                    SettingConstantSpeed = SettingBool(setting);
                     break;
                 case "[Debug]":
-                    outputConfig.SettingDebug = SettingBool(setting);
+                    SettingDebug = SettingBool(setting);
                     break;
                 case "[SerialOutput]":
-                    outputConfig.SettingSerialOutput = SettingBool(setting);
+                    SettingSerialOutput = SettingBool(setting);
                     break;
                 default:
                     break;
@@ -239,6 +216,120 @@ namespace TrainInfoOutputPlugin
             }
 
             return result;
+        }
+
+        public bool SettingDebug_Bool
+        {
+            get { return SettingDebug; }
+            set { SettingDebug = value; }
+        }
+
+        public bool SettingSerialOutput_Bool
+        {
+            get { return SettingSerialOutput; }
+            set { SettingSerialOutput = value; }
+        }
+
+        public bool SettingCars_Bool
+        {
+            get { return SettingCars; }
+            set { SettingCars = value; }
+        }
+
+        public bool SettingLocation_Bool
+        {
+            get { return SettingLocation; }
+            set { SettingLocation = value; }
+        }
+
+        public bool SettingSpeed_Bool
+        {
+            get { return SettingSpeed; }
+            set { SettingSpeed = value; }
+        }
+
+        public bool SettingTime_Bool
+        {
+            get { return SettingTime; }
+            set { SettingTime = value; }
+        }
+
+        public bool SettingBcPressure_Bool
+        {
+            get { return SettingBcPressure; }
+            set { SettingBcPressure = value; }
+        }
+
+        public bool SettingMrPressure_Bool
+        {
+            get { return SettingMrPressure; }
+            set { SettingMrPressure = value; }
+        }
+
+        public bool SettingErPressure_Bool
+        {
+            get { return SettingErPressure; }
+            set { SettingErPressure = value; }
+        }
+
+        public bool SettingBpPressure_Bool
+        {
+            get { return SettingBpPressure; }
+            set { SettingBpPressure = value; }
+        }
+
+        public bool SettingSapPressure_Bool
+        {
+            get { return SettingSapPressure; }
+            set { SettingSapPressure = value; }
+        }
+
+        public bool SettingCurrent_Bool
+        {
+            get { return SettingCurrent; }
+            set { SettingCurrent = value; }
+        }
+
+        public bool SettingAtsP_Bool
+        {
+            get { return SettingAtsP; }
+            set { SettingAtsP = value; }
+        }
+
+        public bool SettingAtsPs_Bool
+        {
+            get { return SettingAtsPs; }
+            set { SettingAtsPs = value; }
+        }
+
+        public bool SettingAtsPf_Bool
+        {
+            get { return SettingAtsPf; }
+            set { SettingAtsPf = value; }
+        }
+
+        public bool SettingAtsSx_Bool
+        {
+            get { return SettingAtsSx; }
+            set { SettingAtsSx = value;}
+        }
+
+        public bool SettingAtc_Bool
+        {
+            get { return SettingAtc; }
+            set { SettingAtc = value; }
+        }
+
+        public bool SettingEb_Bool
+        {
+            get { return SettingEb; }
+            set { SettingEb = value; }
+        }
+
+        public bool SettingConstantSpeed_Bool
+        {
+            get { return SettingConstantSpeed; }
+            set { SettingConstantSpeed = value; }
         }
     }
 }

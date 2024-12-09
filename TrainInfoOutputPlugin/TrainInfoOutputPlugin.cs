@@ -56,8 +56,7 @@ namespace TrainInfoOutputPlugin
     public class TrainInfoOutputPlugin
     {
         private static Settings settingsEnv = null;
-        private static Settings.OutputSetting settingsStatus;
-
+        
         private static ATS_VEHICLESPEC VehicleSpec;
         private static ATS_VEHICLESTATE VehicleState;
         private static ATS_HANDLES HandleInput;
@@ -222,7 +221,6 @@ namespace TrainInfoOutputPlugin
         private void LoadSettings()
         {
             settingsEnv = new Settings();
-            settingsStatus = new Settings.OutputSetting(false);
             settingsEnv.SetUp();
         }
     }
