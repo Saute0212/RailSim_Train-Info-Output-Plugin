@@ -8,6 +8,8 @@ namespace TrainInfoOutputPlugin
 {
     public class Settings
     {
+        private IniReader IniReader_Inst = new IniReader();
+
         string[] SettingsList = { "[Debug]", "[SerialOutput]", "[ComPort]", "[ComSpeed]",
                                   "[Cars]",  "[Location]", "[Speed]", "[Time]",
                                   "[BcPressure]", "[MrPressure]", "[ErPressure]", "[BpPressure]", "[SapPressure]", "[Current]",
@@ -57,72 +59,22 @@ namespace TrainInfoOutputPlugin
         public void SetUp()
         {
             //iniファイルから設定項目を読み込む
-            int len = IniLength(IniPath);
+            int len = IniReader_Inst.IniLength(IniPath);
             foreach (string element in SettingsList)
             {
                 if(element == "[ComPort]")
                 {
-                    ComPort = ReadIni(IniPath, element, len);
+                    ComPort = IniReader_Inst.ReadIni(IniPath, element, len);
                 }
                 else if(element == "[ComSpeed]")
                 {
-                    ComSpeed = ConvertToInt(ReadIni(IniPath, element, len));
+                    ComSpeed = ConvertToInt(IniReader_Inst.ReadIni(IniPath, element, len));
                 }
                 else
                 {
-                    SetConfig(element, ReadIni(IniPath, element, len));
+                    SetConfig(element, IniReader_Inst.ReadIni(IniPath, element, len));
                 }
             }
-        }
-
-        //iniファイルの行数を取得
-        private int IniLength(string IniPath)
-        {
-            int len;
-
-            if (File.Exists(IniPath))
-            {
-                string[] lines = File.ReadAllLines(IniPath);
-                len = lines.Length;
-            }
-            else
-            {
-                len = 0;
-            }
-
-            return len;
-        }
-
-        //iniファイルからtargetの設定を読み込む
-        private string ReadIni(string IniPath, string target, int len)
-        {
-            string[] list = new string[len];
-            int index = 0;
-            string answer = "false";
-
-            if (File.Exists(IniPath))
-            {
-                using (StreamReader reader = new StreamReader(IniPath))
-                {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        list[index] = line;
-                        index++;
-                    }
-                }
-            }
-
-            for (int i = 0; i < len; i++)
-            {
-                if (list[i] == target)
-                {
-                    answer = list[i + 1];
-                    break;
-                }
-            }
-
-            return answer;
         }
 
         //設定項目を構造体に格納

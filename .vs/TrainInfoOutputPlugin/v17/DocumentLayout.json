@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|solutionrelative:traininfooutputplugin\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|f:\\railsim_train-info-output-plugin\\traininfooutputplugin\\traininfooutputplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|solutionrelative:traininfooutputplugin\\traininfooutputplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|f:\\railsim_train-info-output-plugin\\traininfooutputplugin\\inireader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|solutionrelative:traininfooutputplugin\\inireader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,22 +17,9 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 187,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TrainInfoOutputPlugin.cs",
-              "DocumentMoniker": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
-              "RelativeDocumentMoniker": "TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
-              "ToolTip": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
-              "RelativeToolTip": "TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADkAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T15:58:13.525Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -41,9 +28,22 @@
               "RelativeDocumentMoniker": "TrainInfoOutputPlugin\\Settings.cs",
               "ToolTip": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\Settings.cs",
               "RelativeToolTip": "TrainInfoOutputPlugin\\Settings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF8AAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T15:37:41.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IniReader.cs",
+              "DocumentMoniker": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\IniReader.cs",
+              "RelativeDocumentMoniker": "TrainInfoOutputPlugin\\IniReader.cs",
+              "ToolTip": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\IniReader.cs",
+              "RelativeToolTip": "TrainInfoOutputPlugin\\IniReader.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T17:08:05.964Z",
               "EditorCaption": ""
             }
           ]
