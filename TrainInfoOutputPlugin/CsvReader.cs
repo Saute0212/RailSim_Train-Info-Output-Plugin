@@ -9,7 +9,7 @@ namespace TrainInfoOutputPlugin
     public class CsvReader
     {
         //csvファイルの読み込み
-        public string[,] ReadCsv(string CsvPath, bool FillWithSharp)
+        public string[, ] ReadCsv(string CsvPath, bool FillWithSharp)
         {
             var lines = File.ReadAllLines(CsvPath);
 

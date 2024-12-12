@@ -9,6 +9,7 @@ namespace TrainInfoOutputPlugin
     public class Settings
     {
         private IniReader IniReader_Inst = new IniReader();
+        private CsvReader CsvReader_Inst = new CsvReader();
 
         string[] SettingsList = { "[Debug]", "[SerialOutput]", "[ComPort]", "[ComSpeed]",
                                   "[Cars]",  "[Location]", "[Speed]", "[Time]",
