@@ -42,8 +42,8 @@ namespace TrainInfoOutputPlugin
             }
         }
 
-        //データを送信
-        public void SendData(string str)
+        //データを送信(文字列)
+        public void SendData_String(string str)
         {
             if(SelectedPort.IsOpen)
             {
@@ -59,6 +59,26 @@ namespace TrainInfoOutputPlugin
                     }
                 }
             }            
+        }
+
+        //データを送信(バイト列)
+        public void SendData_Byte(byte[] data)
+        {
+            if (SelectedPort.IsOpen)
+            {
+                try
+                {
+                    SelectedPort.Write(data, 0, data.Length);
+                }
+                catch(Exception ex)
+                {
+                    if(DebugFunction.isConsoleOpen)
+                    {
+                        Console.WriteLine("ERROR : " + ex.Message);
+                    }
+                }
+            }
+
         }
 
         //COMポートを閉じる

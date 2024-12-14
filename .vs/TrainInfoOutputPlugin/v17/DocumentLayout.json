@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "F:\\RailSim_Train-Info-Output-Plugin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|f:\\railsim_train-info-output-plugin\\traininfooutputplugin\\debugfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|solutionrelative:traininfooutputplugin\\debugfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|f:\\railsim_train-info-output-plugin\\traininfooutputplugin\\serialcommunications.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|solutionrelative:traininfooutputplugin\\serialcommunications.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DebugFunction.cs",
-              "DocumentMoniker": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\DebugFunction.cs",
-              "RelativeDocumentMoniker": "TrainInfoOutputPlugin\\DebugFunction.cs",
-              "ToolTip": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\DebugFunction.cs",
-              "RelativeToolTip": "TrainInfoOutputPlugin\\DebugFunction.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAcwEgAAAAAAAAA",
+              "Title": "SerialCommunications.cs",
+              "DocumentMoniker": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\SerialCommunications.cs",
+              "RelativeDocumentMoniker": "TrainInfoOutputPlugin\\SerialCommunications.cs",
+              "ToolTip": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\SerialCommunications.cs",
+              "RelativeToolTip": "TrainInfoOutputPlugin\\SerialCommunications.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAIwEMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T02:55:23.403Z",
+              "WhenOpened": "2024-12-14T08:03:00.857Z",
               "EditorCaption": ""
             }
           ]
