@@ -56,6 +56,21 @@ namespace TrainInfoOutputPlugin
             }
         }
 
+        //Byte列を表示
+        public void DisplayBytes(string str, byte[] data)
+        {
+            if(isConsoleOpen)
+            {
+                try
+                {
+                    Console.WriteLine(str + ":" + BitConverter.ToString(data));
+                }
+                catch
+                {
+                }
+            }
+        }
+
         //コンソールを閉じる
         public void CloseConsole()
         {
