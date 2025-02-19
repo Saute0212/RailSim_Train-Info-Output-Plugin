@@ -68,6 +68,7 @@
     <Compile Include="ConstantSpeedControl.cs" />
     <Compile Include="CsvReader.cs" />
     <Compile Include="DataBuffer.cs" />
+    <Compile Include="DataConverter.cs" />
     <Compile Include="DebugFunction.cs" />
     <Compile Include="Eb.cs" />
     <Compile Include="FalsePassagePreventionDevice.cs" />
