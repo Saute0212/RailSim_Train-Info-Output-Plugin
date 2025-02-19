@@ -9,13 +9,13 @@ namespace TrainInfoOutputPlugin
     public class SerialCommunications
     {
         //COMポート番号(Default:COM0)
-        private string port = "COM0";
+        private static string port = "COM0";
 
         //シリアル通信速度(Default:9600bps)
-        private int speed = 9600;
+        private static int speed = 9600;
 
         //選択したCOMポート
-        private SerialPort SelectedPort = null;
+        private static SerialPort SelectedPort = null;
 
         //シリアル通信初期化
         public void InitSerialCommunications(string ini_port, string ini_speed)
@@ -26,7 +26,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //COMポートを開く
-        public void OpenPort()
+        public static void OpenPort()
         {
             try
             {
@@ -43,7 +43,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //データを送信(文字列)
-        public void SendData_String(string str)
+        public static void SendData_String(string str)
         {
             if(SelectedPort.IsOpen)
             {
@@ -62,7 +62,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //データを送信(バイト列)
-        public void SendData_Byte(byte[] data)
+        public static void SendData_Byte(byte[] data)
         {
             if (SelectedPort.IsOpen)
             {
@@ -82,7 +82,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //COMポートを閉じる
-        public void ClosePort()
+        public static void ClosePort()
         {
             if(SelectedPort != null)
             {
@@ -102,7 +102,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //シリアル通信速度設定
-        private void SetComSpeed(string target)
+        private static void SetComSpeed(string target)
         {
             switch(target)
             {

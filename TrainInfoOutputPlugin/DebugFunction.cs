@@ -19,14 +19,14 @@ namespace TrainInfoOutputPlugin
         public static bool isConsoleOpen = false;
 
         //コンソールの初期化
-        public void InitConsole()
+        public static void InitConsole()
         {
             ShowConsole();
             DisplayString("The debug console has been launched.");
         }
 
         //コンソールを表示
-        public void ShowConsole()
+        public static void ShowConsole()
         {
             if(!isConsoleOpen)
             {
@@ -42,7 +42,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //文字列を表示
-        public void DisplayString(string str)
+        public static void DisplayString(string str)
         {
             if(isConsoleOpen)
             {
@@ -57,7 +57,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //Byte列を表示
-        public void DisplayBytes(string str, byte[] data)
+        public static void DisplayBytes(string str, byte[] data)
         {
             if(isConsoleOpen)
             {
@@ -72,7 +72,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //コンソールを閉じる
-        public void CloseConsole()
+        public static void CloseConsole()
         {
             if (isConsoleOpen)
             {
