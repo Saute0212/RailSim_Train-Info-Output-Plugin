@@ -9,7 +9,7 @@ namespace TrainInfoOutputPlugin
     public class IniReader
     {
         //iniファイルの行数を取得
-        public int IniLength(string IniPath)
+        public static int IniLength(string IniPath)
         {
             int len;
 
@@ -27,7 +27,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //iniファイルからtargetの設定を読み込む
-        public string ReadIni(string IniPath, string target, int len)
+        public static string ReadIni(string IniPath, string target, int len)
         {
             string[] list = new string[len];
             int index = 0;

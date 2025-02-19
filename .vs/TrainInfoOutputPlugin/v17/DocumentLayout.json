@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "F:\\RailSim_Train-Info-Output-Plugin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|f:\\railsim_train-info-output-plugin\\traininfooutputplugin\\multithreadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|solutionrelative:traininfooutputplugin\\multithreadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|f:\\railsim_train-info-output-plugin\\traininfooutputplugin\\traininfooutputplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|solutionrelative:traininfooutputplugin\\traininfooutputplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MultiThreadController.cs",
-              "DocumentMoniker": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\MultiThreadController.cs",
-              "RelativeDocumentMoniker": "TrainInfoOutputPlugin\\MultiThreadController.cs",
-              "ToolTip": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\MultiThreadController.cs",
-              "RelativeToolTip": "TrainInfoOutputPlugin\\MultiThreadController.cs",
-              "ViewState": "AQIAAOoAAAAAAAAAAAAiwNMAAAANAAAA",
+              "Title": "TrainInfoOutputPlugin.cs",
+              "DocumentMoniker": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
+              "RelativeDocumentMoniker": "TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
+              "ToolTip": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
+              "RelativeToolTip": "TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
+              "ViewState": "AQIAAMkAAAAAAAAAAAAYwN4AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T16:33:52.22Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-02-19T17:25:55.669Z",
               "EditorCaption": ""
             }
           ]

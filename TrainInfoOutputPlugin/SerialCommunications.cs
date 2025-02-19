@@ -18,7 +18,7 @@ namespace TrainInfoOutputPlugin
         private static SerialPort SelectedPort = null;
 
         //シリアル通信初期化
-        public void InitSerialCommunications(string ini_port, string ini_speed)
+        public static void InitSerialCommunications(string ini_port, string ini_speed)
         {
             port = ini_port;
             SetComSpeed(ini_speed);

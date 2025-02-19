@@ -9,7 +9,7 @@ namespace TrainInfoOutputPlugin
     public class CsvReader
     {
         //csvファイルの読み込み
-        public string[, ] ReadCsv(string CsvPath, bool FillWithSharp)
+        public static string[, ] ReadCsv(string CsvPath, bool FillWithSharp)
         {
             var lines = File.ReadAllLines(CsvPath);
 
@@ -52,7 +52,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //ダブルクォーテーション・空白の除去
-        public string FixCsvFormat(string str)
+        public static string FixCsvFormat(string str)
         {
             if (str.StartsWith("\"") && str.EndsWith("\""))
             {
@@ -65,7 +65,7 @@ namespace TrainInfoOutputPlugin
         }
 
         //コメントアウト(#)の探索
-        public bool StartWithSharp(string str)
+        public static bool StartWithSharp(string str)
         {
             bool result = false;
 

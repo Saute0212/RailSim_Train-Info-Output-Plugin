@@ -105,7 +105,7 @@ namespace TrainInfoOutputPlugin
         [DllExport(CallingConvention = CallingConvention.StdCall)]
         public static void Load()
         {
-            
+            SetupSystem();
         }
 
         //プラグイン解放時に実行
@@ -119,7 +119,7 @@ namespace TrainInfoOutputPlugin
         [DllExport(CallingConvention = CallingConvention.StdCall)]
         public static int GetPluginVersion()
         {
-            return settingsEnv.PluginFormat;
+            return Settings.PluginFormat;
         }
 
         //車両読み込み時に実行
@@ -133,7 +133,7 @@ namespace TrainInfoOutputPlugin
         [DllExport(CallingConvention = CallingConvention.StdCall)]
         public static void Initialize(int brake)
         {
-
+            
         }
 
         //毎フレーム実行
@@ -218,10 +218,10 @@ namespace TrainInfoOutputPlugin
         }
 
         //設定の読み込み
-        private void LoadSettings()
+        private static void SetupSystem()
         {
-            settingsEnv = new Settings();
-            settingsEnv.SetUp();
+            Settings.SetUp();
+            SerialCommunications.InitSerialCommunications(Settings.ComPort, Settings.ComSpeed.ToString());
         }
     }
 }
