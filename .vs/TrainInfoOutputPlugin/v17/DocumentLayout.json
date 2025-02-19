@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|f:\\railsim_train-info-output-plugin\\traininfooutputplugin\\multithreadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|solutionrelative:traininfooutputplugin\\multithreadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|f:\\railsim_train-info-output-plugin\\traininfooutputplugin\\traininfooutputplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71C9535E-6F9A-4F6E-BD4E-DC1B34FD747A}|TrainInfoOutputPlugin\\TrainInfoOutputPlugin.csproj|solutionrelative:traininfooutputplugin\\traininfooutputplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,23 +13,9 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 409,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TrainInfoOutputPlugin.cs",
-              "DocumentMoniker": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
-              "RelativeDocumentMoniker": "TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
-              "ToolTip": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
-              "RelativeToolTip": "TrainInfoOutputPlugin\\TrainInfoOutputPlugin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T16:35:10.588Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -42,7 +24,7 @@
               "RelativeDocumentMoniker": "TrainInfoOutputPlugin\\MultiThreadController.cs",
               "ToolTip": "F:\\RailSim_Train-Info-Output-Plugin\\TrainInfoOutputPlugin\\MultiThreadController.cs",
               "RelativeToolTip": "TrainInfoOutputPlugin\\MultiThreadController.cs",
-              "ViewState": "AQIAAKcAAAAAAAAAAAAUwLYAAAAqAAAA",
+              "ViewState": "AQIAAOoAAAAAAAAAAAAiwNMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-19T16:33:52.22Z",
               "IsPinned": true,

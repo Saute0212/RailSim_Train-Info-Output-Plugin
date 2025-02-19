@@ -193,6 +193,11 @@ namespace TrainInfoOutputPlugin
         {
             while(IsThreadRunning(Thread_SerialCommunications))
             {
+                byte[] reset = new byte[1];
+                reset[0] = 0x00;
+                byte[] tmp = DataBuffer.SerialCommunications.ReadData(DataBuffer.SerialCommunications.ReadIndex());
+                SerialCommunications.SendData_Byte(tmp); //データの送信
+                SerialCommunications.SendData_Byte(reset); //リセット信号送信
                 Thread.Sleep(500);
             }
         }
@@ -201,6 +206,8 @@ namespace TrainInfoOutputPlugin
         {
             while(IsThreadRunning(Thread_DebugFunction))
             {
+                string tmp = DataBuffer.DebugFunction.ReadData(DataBuffer.DebugFunction.ReadIndex());
+                DebugFunction.DisplayString(tmp);
                 Thread.Sleep(500);
             }
         }
@@ -209,6 +216,7 @@ namespace TrainInfoOutputPlugin
         {
             while(IsThreadRunning(Thread_PlayMusic))
             {
+                string[] tmp = DataBuffer.PlayMusic.ReadData(DataBuffer.PlayMusic.ReadIndex());
                 Thread.Sleep(500);
             }
         }
